@@ -45,24 +45,17 @@ User-Agent: Lab-<version>
 
 #### Response
 
-When doing an asynchronous response, respond to the request with a 202 Accepted status and return an empty payload.
-
+Acknowledge that you received the message by sending back an empty response with a 202 Accepted status.
 
 ```
 HTTP/1.1 202 Accepted
-Content-Type: application/json
 ```
 
-```json
-{}
-```
+##### Responding to the received message
 
-##### Request (for response)
+Take the `response_url` and `token` from the request.
 
-Then take the `response_url` and `token` from the request.
-
-Create the response message with the token and then POST the payload to the `response_url`
-
+POST the payload to the `response_url`, passing your message together with the token.
 
 ```
 POST https://example.com/responses/5c7eb24b-c844-4f02-b1aa-f3ac301882f0
@@ -82,27 +75,14 @@ Content-Type: application/json
 
 A token may be reused as many times within the lifespan of the session.
 
-##### Response (successful)
+##### Response
 
-Lab will respond with a 204 No Content, if the request was successful.
+The response will be blank and distinguished based on the HTTP status code:
 
-```
-HTTP/1.1 204 No Content
-```
+| Code                     | Description                                                               |
+| ----------------         | ------------------------------------------------------------------------- |
+| 204 No Content           | request was successful                                                    |
+| 404 Not Found            | the session specified could not be found                                  |
+| 404 Unprocessable Entity | payload malformed or token invalid                                        |
 
-##### Response (session does not exist)
 
-Lab will respond with a 404, if the session specified could not be found.
-
-```
-HTTP/1.1 404 Not Found
-```
-
-##### Response (payload contained an error)
-
-Lab will respond with a 422, if the payload was malformed or the token was invalid.
-
-__Status__ 422
-```
-HTTP/1.1 422 Unprocessable Entity
-```
