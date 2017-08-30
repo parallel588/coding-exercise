@@ -1,6 +1,8 @@
-## Webhook API
+# LAB API
 
-__Model Attributes__
+## Webhook push (receive message)
+
+__Attributes__
 
 | Name             | Type       | Description                                                               |
 | ---------------- | ---------  | ------------------------------------------------------------------------- |
@@ -45,9 +47,9 @@ User-Agent: Lab-<version>
 
 When doing an asynchronous response, respond to the request with a 202 Accepted status and return an empty payload.
 
-__Status__ 202
 
 ```
+HTTP/1.1 202 Accepted
 Content-Type: application/json
 ```
 
@@ -84,16 +86,23 @@ A token may be reused as many times within the lifespan of the session.
 
 Lab will respond with a 204 No Content, if the request was successful.
 
-__Status__ 204
+```
+HTTP/1.1 204 No Content
+```
 
 ##### Response (session does not exist)
 
 Lab will respond with a 404, if the session specified could not be found.
 
-__Status__ 404
+```
+HTTP/1.1 404 Not Found
+```
 
 ##### Response (payload contained an error)
 
 Lab will respond with a 422, if the payload was malformed or the token was invalid.
 
 __Status__ 422
+```
+HTTP/1.1 422 Unprocessable Entity
+```
