@@ -7,12 +7,12 @@ node.js.
 
 The exercise should take an estimated ~30-60 minutes to complete.
 
-Please send your solution via email (devs@tsgglobal.com). Along with the code, please include a written introduction to your solution, that explains the design and implementation decisions you made and why.
+Please send your solution via email (developers@tsgglobal.com). Along with the code, please include a written introduction to your solution, that explains the design and implementation decisions you made and why.
 
 ## Problem to Solve
 
 In this exercise, you will be writing a webhook based chatbot to integrate with
-a test server we've provided for you #{API DOCS}.
+a [test server we've provided for you](#test-server).
 
 Your bot is supposed to be able to receive messages via the webhook, and respond
 to them by doing a POST back to the API.
@@ -34,12 +34,14 @@ Bonus points if you have the time to write tests for the webhook.
 
 ## Test Server
 
-#{URL} #{API DOCS}
+https://lab.tsgglobal.world
+
+[API Documentation](Lab-API.md)
 
 To use the test server, enter your webhook URL, and press start. A chat session
 will open, which you can now use to interact with your webhook.
 
-If you're testing your code locally, we recommend you use ![ngrok](https://ngrok.com/) for exposing your local endpoint.
+If you're testing your code locally, we recommend you use [ngrok](https://ngrok.com/) for exposing your local endpoint.
 
 ```
 $ ngrok http <local-port>
