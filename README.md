@@ -7,7 +7,12 @@ node.js.
 
 The exercise should take an estimated ~30-60 minutes to complete.
 
-Please send your solution via email (developers@tsgglobal.com). Along with the code, please include a written introduction to your solution, that explains the design and implementation decisions you made and why.
+Please send your solution via email (developers@tsgglobal.com).
+
+Along with your code, please include:
+* A written introduction to your solution that explains the design and implementation decisions you made and why.
+* A link to your github profile (if no portfolio is provided)
+* A programming portfolio (if no github profile is provided)
 
 ## Problem to Solve
 
